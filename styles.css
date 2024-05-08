@@ -5,9 +5,20 @@ html, body {
   font-family: 'Inter', sans-serif;
   color: #424242;
 }
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.modal-overlay.active {
+  display: block;
+}
 .modal {
-  max-height: 92vh;
   display: grid;
+  max-height: 92vh;
   grid-template-columns: 1fr 1fr;
   background-color: #fff;
   margin: 3%;
@@ -33,8 +44,16 @@ img {
   gap: 10px;
   margin: 7px 0 40px 0;
 }
-img.active,
-.thumbnails img:hover {
+button.thumb {
+  background: none;
+  border: none;
+  padding: 0;
+  border-radius: 5px;
+  line-height: 0;
+}
+button.thumb:hover,
+button.thumb:focus,
+button.thumb.active {
   box-shadow: 0 4px 2px rgba(0, 0, 0, 0.3);
   cursor: pointer;
 }
@@ -56,11 +75,8 @@ img.active,
 button {
   cursor: pointer;
 }
-#questions,
-#reviews {
-  display: none;
-}
 .tab-content {
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -69,6 +85,9 @@ button {
   overflow-y: auto;
   margin-top: 30px;
 }
+.tab-content.active {
+  display: block;
+}
 .tab-content ul {
   margin: 0;
   padding: 0 20px;
@@ -76,6 +95,11 @@ button {
 .tab-content ul li {
   margin: 10px 0;
   font-size: 0.9rem;
+}
+#questions ul,
+#reviews ul {
+  list-style: none;
+  padding: 0;
 }
 .modal-right {
   position: relative;
