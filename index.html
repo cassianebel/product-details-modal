@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details Modal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  
+
+  <div class="modal" id="modal">
+    <div class="modal-left">
+      <img id="main-img" class="main-img" src="/assets/product-1.webp" alt="watch on a wrist with futuristic cityscape in the background">
+      <div class="thumbnails">
+        <img class="active" src="/assets/product-1.webp" alt="watch on a wrist with futuristic cityscape in the background">
+        <img src="/assets/product-2.webp" alt="watch on a wrist with futuristic display emitting from device">
+        <img src="/assets/product-3.webp" alt="watch on a wrist with futuristic streetview map display">
+        <img src="/assets/product-4.webp" alt="watch on a wrist with futuristic cityscape hologram emitting from device">
+      </div>
+      <div id="tabs" class="tabs">
+        <button class="tab active" data-target="about">About this item</button>
+        <button class="tab" data-target="questions">Questions</button>
+        <button class="tab" data-target="reviews">Reviews (14)</button>
+        <div class="tab-content active" id="about">
+          <ul>
+            <li>The ZyGlon smartwatch boast an advanced holographic display that projects a 3D cityscape, offering interactive navigation and real-time urban alalytics.</li>
+            <li>With state-of-the-art biometric sensors, the watch provides comprehensive health tracking, including heart rate variability, oxygen saturation, stress levels, and radiation levels.</li>
+            <li>Quantum Processing Unit (QPU): At the heart of the smartwatch lies a QPU that delivers unparalleled computing power. THis enables instantaneous data processing, complex augmented reality experiences, and seamless integration with bio-mod devices.</li>
+            <li>Equipped with smart temporal analytics that anlyzes personal and public data to predict future trends in your schedule and city life.</li>
+            <li>The smartwatch doesn't just adapt to your scheduel - it adapts to your style. It features chameleon-like skin that changes with your outfit of the day.</li>
+          </ul>
+        </div>
+        <div class="tab-content" id="questions">
+          <ul>
+            <li>Q: Can the ZyGlon smartwatch be used with other bio-mod devices?</li>
+            <li>A: Yes, the ZyGlon smartwatch is compatible with all bio-mod devices that support the ZyGlon OS.</li>
+            <li>Q: How long does the battery last?</li>
+            <li>A: The battery lasts up to 48 hours with normal use. The battery life may vary depending on usage and settings.</li>
+            <li>Q: Can the smartwatch be used for swimming?</li>
+            <li>A: Yes, the ZyGlon smartwatch is water-resistant up to 50 meters. It is suitable for swimming, but not for diving or snorkeling.</li>
+          </ul>
+        </div>
+        <div class="tab-content" id="reviews">
+          <ul>
+            <li>"The ZyGlon smartwatch is a game-changer! The holographic display is amazing, and the health tracking features are top-notch." - Jane Doe</li>
+            <li>"I love the ZyGlon smartwatch! It's stylish, functional, and easy to use. I highly recommend it to anyone looking for a smartwatch." - John Smith</li>
+            <li>"The ZyGlon smartwatch exceeded my expectations. It's a great value for the price, and the customer service is excellent." - Emily Johnson</li>
+            <li>"The ZyGlon holographic smartwatch is truly revolutionary! The holographic display brings a whole new level of immersion and interactivity. The health tracking features are incredibly accurate and provide valuable insights. I'm impressed with the computing power of the Quantum Processing Unit (QPU) and how it enhances the augmented reality experiences. The chameleon-like skin is a stylish touch that adds versatility to any outfit. Overall, the ZyGlon holographic smartwatch is a must-have for tech enthusiasts and fashion-forward individuals." - Cassia Nebel</li>
+            <li>"The ZyGlon smartwatch is sleek and futuristic. The holographic display is mesmerizing and the health tracking features are comprehensive." - Sarah Thompson</li>
+            <li>"I've been using the ZyGlon smartwatch for a month now and I'm impressed with its performance. The battery life is great and the watch is comfortable to wear." - Michael Brown</li>
+            <li>"The ZyGlon smartwatch is perfect for fitness enthusiasts. It accurately tracks my workouts and provides real-time feedback on my progress." - Amanda Wilson</li>
+            <li>"I can't imagine my life without the ZyGlon smartwatch. It keeps me organized, connected, and motivated throughout the day." - David Rodriguez</li>
+            <li>"The ZyGlon smartwatch is a fashion statement. It adds a touch of sophistication to any outfit and always gets compliments." - Jessica Lee</li>
+            <li>"The ZyGlon smartwatch is user-friendly and intuitive. It's easy to navigate through the menus and customize the watch face." - Mark Taylor</li>
+            <li>"I've tried several smartwatches, but the ZyGlon smartwatch stands out from the rest. The holographic display is stunning and the watch offers a seamless user experience." - Jennifer Davis</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="modal-right">
+      <div class="close" id="close">&times;</div>
+      <h2>ZyGlon holographic smartwatch: Navigate with a 3D interactive cityscape, with biometric tracking, and experience seamless connectivity with a powerful Quantum Processing Unit.</h2>
+      <button class="reviews"><span>4.7</span> <span>14 reviews</span></span></button>
+      <div class="price">
+        <img src="assets/product-1.webp" alt="ZyGlon holographic smartwatch">
+        <div>
+          <span>$24.95</span>
+          <p><strong>Free</strong> delivery <strong>Friday, December 8</strong> if you order within 11 hrs 9 mins</p>
+        </div>
+      </div>
+      <p><strong>Ships from </strong>Amazon</p>
+      <p><strong>Sold by </strong>ZyGlon</p>
+      <p><strong>Returns </strong>Returnable until Jan 31, 2055</p>
+      <p class="similar"><strong>Similar items to consider</strong></p>
+      <div class="similar-items">
+        <img src="assets/related-1.webp" alt="Another holographic smartwatch">
+        <img src="assets/related-2.webp" alt="A Different holographic smartwatch">
+        <img src="assets/related-3.webp" alt="A New holographic smartwatch">
+        <img src="assets/related-4.webp" alt="A Better holographic smartwatch">
+      </div>
+      <div class="cta">
+        <button class="add-to-cart">Add to Cart</button>
+        <button class="add-to-list">Save to a List</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts.js"></script>
+  
+</body>
+</html>
