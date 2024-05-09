@@ -37,7 +37,8 @@
             </ul>
           </div>
           <div class="tab-content" id="questions">
-            <ul>
+            <button id="ask-question" class="ask-question">Ask a Question</button>
+            <ul id="questions-ul">
               <li><strong>Can the ZyGlon smartwatch be used with other bio-mod devices?</strong>
                 <br />
                 Yes, the ZyGlon smartwatch is compatible with all bio-mod devices that support the ZyGlon OS.</li>
@@ -50,7 +51,7 @@
             </ul>
           </div>
           <div class="tab-content" id="reviews">
-            <button id="write-review" class="write-review">Write a review</button>
+            <button id="write-review" class="write-review">Write a Review</button>
             <ul id="reviews-ul">
               <li>"The ZyGlon smartwatch is a game-changer! The holographic display is amazing, and the health tracking features are top-notch." - Jane Doe</li>
               <li>"I love the ZyGlon smartwatch! It's stylish, functional, and easy to use. I highly recommend it to anyone looking for a smartwatch." - John Smith</li>
@@ -121,12 +122,24 @@
 
       <div class="review-form" id="review-form">
         <button class="close" id="close-review"><span>&times;</span></button>
-        <h2>Write a review</h2>
+        <h2>Write a Review</h2>
         <form>
           <label for="name">Name</label>
           <input type="text" id="name" name="name" required>
           <label for="review">Review</label>
           <textarea id="review" name="review" required></textarea>
+          <button type="submit" class="primary">Submit</button>
+        </form>
+      </div>
+
+      <div class="question-form" id="question-form">
+        <button class="close" id="close-question"><span>&times;</span></button>
+        <h2>Ask a Question</h2>
+        <form>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+          <label for="question">Question</label>
+          <textarea id="question" name="question" required></textarea>
           <button type="submit" class="primary">Submit</button>
         </form>
       </div>

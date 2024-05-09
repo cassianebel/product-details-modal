@@ -148,3 +148,71 @@ function displayReviews() {
 document.addEventListener('DOMContentLoaded', () => {
   displayReviews();
 });
+
+
+/**
+ * Ask a question button event listener
+ * Opens the question form when the button is clicked
+ */
+const askQuestionButton = document.getElementById('ask-question');
+askQuestionButton.addEventListener('click', () => {
+  document.getElementById('question-form').classList.add('active');
+});
+
+
+/**
+ * Question form close button event listener
+ * Closes the question form when the close button is clicked
+ */
+const questionCloseButton = document.getElementById('close-question');
+questionCloseButton.addEventListener('click', () => {
+  document.getElementById('question-form').classList.remove('active');
+});
+
+
+/**
+ * Question form submit event listener
+ * Displays the question in the questions tab when the form is submitted
+ * saves the question in local storage
+ * clears the form fields
+ * closes the question form
+ */
+const questionForm = document.getElementById('question-form');
+questionForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const name = document.getElementById('name').value;
+  const question = document.getElementById('question').value;
+  const questionData = { name, question};
+
+  const questions = JSON.parse(localStorage.getItem('questions')) || [];
+  questions.push(questionData);
+  localStorage.setItem('questions', JSON.stringify(questions));
+
+  displayQuestions();
+  
+  document.getElementById('name').value = '';
+  document.getElementById('question').value = '';
+  document.getElementById('question-form').classList.remove('active');
+});
+
+
+/**
+ * Displays the newly submited and/or local storage questions
+ */
+function displayQuestions() {
+  const questions = JSON.parse(localStorage.getItem('questions')) || [];
+  const questionsUl = document.getElementById('questions-ul');
+  questions.forEach(question => {
+    const questionElement = document.createElement('li');
+    questionElement.innerHTML = `<strong>${question.question}</strong>`;
+    questionsUl.insertAdjacentElement('afterbegin', questionElement);
+  });
+}
+
+
+/**
+ * display the local storage reviews when the page loads
+ */
+document.addEventListener('DOMContentLoaded', () => {
+  displayQuestions();
+});
