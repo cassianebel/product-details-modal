@@ -63,7 +63,7 @@ reviewsButton.addEventListener('click', () => {
  * Close button event listener
  * Closes the modal when the close button is clicked
  */
-const closeButton = document.querySelector('.close');
+const closeButton = document.getElementById('close-modal');
 closeButton.addEventListener('click', () => {
   document.querySelector('.modal-overlay').classList.remove('active');
 });
@@ -74,6 +74,77 @@ closeButton.addEventListener('click', () => {
  * Closes the modal when the overlay is clicked
  */
 const overlay = document.querySelector('.modal-overlay');
-overlay.addEventListener('click', () => {
-  overlay.classList.remove('active');
+overlay.addEventListener('click', (event) => {
+  const isOutside = !event.target.closest('.modal');
+  if (isOutside) {
+    overlay.classList.remove('active');
+  }
+});
+
+
+/**
+ * Write a review button event listener
+ * Opens the review form when the button is clicked
+ */
+const writeReviewButton = document.getElementById('write-review');
+writeReviewButton.addEventListener('click', () => {
+  document.getElementById('review-form').classList.add('active');
+});
+
+
+/**
+ * Review form close button event listener
+ * Closes the review form when the close button is clicked
+ */
+const reviewCloseButton = document.getElementById('close-review');
+reviewCloseButton.addEventListener('click', () => {
+  document.getElementById('review-form').classList.remove('active');
+});
+
+
+/**
+ * Review form submit event listener
+ * Displays the review in the reviews tab when the form is submitted
+ * saves the review in local storage
+ * clears the form fields
+ * closes the review form
+ */
+const reviewForm = document.getElementById('review-form');
+reviewForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const name = document.getElementById('name').value;
+  const review = document.getElementById('review').value;
+  const reviewData = { name, review};
+
+  const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+  reviews.push(reviewData);
+  localStorage.setItem('reviews', JSON.stringify(reviews));
+
+  displayReviews();
+  
+  document.getElementById('name').value = '';
+  document.getElementById('review').value = '';
+  document.getElementById('review-form').classList.remove('active');
+});
+
+
+/**
+ * Displays the newly submited and/or local storage reviews
+ */
+function displayReviews() {
+  const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+  const reviewsUl = document.getElementById('reviews-ul');
+  reviews.forEach(review => {
+    const reviewElement = document.createElement('li');
+    reviewElement.innerHTML = `"${review.review}" - ${review.name}`;
+    reviewsUl.insertAdjacentElement('afterbegin', reviewElement);
+  });
+}
+
+
+/**
+ * display the local storage reviews when the page loads
+ */
+document.addEventListener('DOMContentLoaded', () => {
+  displayReviews();
 });

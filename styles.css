@@ -17,6 +17,7 @@ html, body {
   display: block;
 }
 .modal {
+  position: relative;
   display: grid;
   max-height: 92vh;
   grid-template-columns: 1fr 1fr;
@@ -101,6 +102,12 @@ button {
   list-style: none;
   padding: 0;
 }
+.write-review {
+  background-color: #FFCD68;
+  padding: 10px 14px;
+  border-radius: 5px;
+  border: none;
+}
 .modal-right {
   position: relative;
   background-color: #F2F7F8;
@@ -161,16 +168,48 @@ button.reviews {
   display: flex;
   gap: 15px;
 }
-.cta button {
+button.primary {
   display: block;
   width: 100%;
   padding: 15px;
   margin: 10px 0;
   border-radius: 5px;
   border: none;
-  background-color: #E8EDEE;
-}
-button.add-to-cart {
   background-color: #FFCD68;
 }
+button.secondary {
+  background-color: #E8EDEE;
+}
+.review-form {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+.review-form.active {
+  display: block;
+}
+label {
+  display: block;
+  margin: 20px 0 5px 0;
+}
+input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #d4dadc;
+}
+textarea {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #d4dadc;
+  min-height: 100px;
+} 
 
